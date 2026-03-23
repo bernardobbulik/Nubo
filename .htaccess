@@ -1,0 +1,17 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Keep route URLs canonical even if someone hits page files directly.
+    RewriteRule ^public/pages/login\.php$ login [R=302,L,QSA,NC]
+    RewriteRule ^public/pages/home\.php$ home [R=302,L,QSA,NC]
+
+    # Serve existing files/directories directly.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # All other requests go to the front controller.
+    RewriteRule ^ index.php [L,QSA]
+</IfModule>

@@ -1,0 +1,411 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.page-login {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    background: #f8f9fb;
+}
+
+.login-shell {
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(440px, 1fr) 1fr;
+    background: #ffffff;
+}
+
+.login-form-panel {
+    padding: 4.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+    border-right: 1px solid #edf1f6;
+}
+
+.login-brand {
+    margin-bottom: 2rem;
+}
+
+.login-card {
+    max-width: 460px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2.2rem 2.25rem 2.75rem;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 18px 42px rgba(18, 34, 77, 0.06);
+}
+
+.login-copy h1 {
+    font-size: clamp(2.5rem, 5vw, 3.65rem);
+    font-weight: 800;
+    line-height: 1.06;
+    margin-bottom: 0.25rem;
+}
+
+.login-copy p {
+    margin-top: 0.2rem;
+    color: #7a8292;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.login-form {
+    margin-top: 2rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-control.form-control-nubo {
+    border-radius: 14px;
+    border: 1px solid #d8dde7;
+    box-shadow: none;
+    height: 52px;
+    padding: 0.9rem 1rem;
+}
+
+.form-control.form-control-nubo:focus {
+    border-color: #7a94e5;
+    box-shadow: 0 0 0 0.2rem rgba(128, 147, 231, 0.16);
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.login-link,
+.login-signup,
+.login-signup a {
+    color: var(--nubo-text-soft);
+}
+
+.login-link:hover,
+.login-signup a:hover {
+    color: var(--nubo-text);
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field .form-control {
+    padding-right: 3.4rem;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0.65rem;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    border: 0;
+    background: transparent;
+}
+
+.login-divider {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0;
+    color: #97a4b8;
+}
+
+.btn-nubo {
+    border-radius: 14px;
+    font-weight: 700;
+}
+
+.btn-nubo-dark {
+    color: #fff;
+    background: #0d1220;
+    border-color: #0d1220;
+    min-height: 56px;
+    font-size: 1.05rem;
+}
+
+.btn-nubo-dark:hover {
+    background: #0a1225;
+    border-color: #0a1225;
+}
+
+.btn-social {
+    border-radius: 14px;
+    min-height: 56px;
+    font-size: 1rem;
+}
+
+.login-signup {
+    margin-top: 1.6rem;
+    text-align: center;
+}
+
+.login-signup a {
+    font-weight: 700;
+    color: #0c0f3e;
+}
+
+.login-divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: var(--nubo-border);
+}
+
+.login-divider span {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0 1rem;
+}
+
+.btn-social {
+    width: 100%;
+    min-height: 56px;
+    border-radius: 16px;
+    border: 1px solid var(--nubo-border);
+    background: rgba(255, 255, 255, 0.75);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    font-weight: 600;
+    transition: transform 0.25s var(--nubo-ease), box-shadow 0.25s var(--nubo-ease), background-color 0.25s var(--nubo-ease);
+}
+
+.btn-social:hover {
+    transform: translateY(-2px);
+    background: #fff;
+    box-shadow: var(--nubo-shadow-md);
+}
+
+.login-signup {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.login-signup a {
+    font-weight: 700;
+    color: var(--nubo-text);
+}
+
+.login-visual-panel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b0d10;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+    overflow: hidden;
+}
+
+.login-visual-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 36%, rgba(255, 255, 255, 0.05), rgba(11, 13, 16, 0.78) 56%, rgba(11, 13, 16, 1) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.login-visual-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.network-cluster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center;
+    animation: clusterFloat 6.8s ease-in-out infinite;
+}
+
+.network-static {
+    width: clamp(155px, 21vw, 220px);
+    height: auto;
+    overflow: visible;
+}
+
+.network-lines line {
+    stroke: rgba(255, 255, 255, 0.27);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-dasharray: 130;
+    stroke-dashoffset: 0;
+    animation: linkBreath 3.8s ease-in-out infinite;
+}
+
+.network-lines line:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+.network-lines line:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.network-lines line:nth-child(4) {
+    animation-delay: 1.05s;
+}
+
+.network-lines line:nth-child(5) {
+    animation-delay: 1.4s;
+}
+
+.network-nodes circle {
+    fill: #f3f5f7;
+    stroke: rgba(217, 223, 231, 0.68);
+    stroke-width: 1.2;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: nodePulse 3.2s ease-in-out infinite;
+}
+
+.network-nodes circle:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.network-nodes circle:nth-child(3) {
+    animation-delay: 0.95s;
+}
+
+.network-nodes circle:nth-child(4) {
+    animation-delay: 1.4s;
+}
+
+.network-nodes circle:nth-child(5) {
+    animation-delay: 1.85s;
+}
+
+.network-nodes .node-highlight {
+    fill: #f9fbff;
+    stroke: rgba(234, 240, 250, 0.88);
+    filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.58));
+}
+
+.network-copy {
+    margin-top: clamp(1.5rem, 4.8vh, 3.4rem);
+    text-align: center;
+    line-height: 1.45;
+    letter-spacing: 0.005em;
+    animation: textBreath 4.8s ease-in-out infinite;
+}
+
+.network-copy p {
+    margin: 0;
+    color: #c8b8a4;
+    font-size: clamp(1.05rem, 1.75vw, 1.7rem);
+    font-weight: 600;
+}
+
+.network-copy strong {
+    display: block;
+    margin-top: 0.3rem;
+    color: #ffffff;
+    font-size: clamp(1.05rem, 1.75vw, 1.7rem);
+    font-weight: 700;
+}
+
+@keyframes clusterFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes linkBreath {
+    0%,
+    100% {
+        stroke: rgba(255, 255, 255, 0.23);
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke: rgba(255, 255, 255, 0.44);
+        stroke-dashoffset: -28;
+    }
+}
+
+@keyframes nodePulse {
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+    }
+    50% {
+        transform: scale(1.12);
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.55));
+    }
+}
+
+@keyframes textBreath {
+    0%,
+    100% {
+        opacity: 0.96;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .login-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .login-visual-panel {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .page-login {
+        padding: 0;
+    }
+
+    .login-shell {
+        min-height: 100vh;
+        border-radius: 0;
+        border: 0;
+    }
+
+    .login-form-panel {
+        padding: 2rem 1.15rem;
+    }
+
+    .network-copy {
+        margin-top: 1.8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .network-cluster,
+    .network-lines line,
+    .network-nodes circle,
+    .network-copy {
+        animation: none;
+    }
+}

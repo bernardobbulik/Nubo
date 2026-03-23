@@ -1,0 +1,226 @@
+.brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.875rem;
+    font-weight: 800;
+    font-size: 1.75rem;
+    letter-spacing: -0.05em;
+}
+
+.brand-logo {
+    width: auto;
+    height: 36px;
+    max-width: 180px;
+}
+
+.btn-nubo {
+    --bs-btn-padding-y: 0.9rem;
+    --bs-btn-padding-x: 1.3rem;
+    --bs-btn-font-weight: 700;
+    --bs-btn-border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    border: 1px solid transparent;
+    transition: transform 0.28s var(--nubo-ease), box-shadow 0.28s var(--nubo-ease), background-color 0.28s var(--nubo-ease), border-color 0.28s var(--nubo-ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-nubo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.14) 35%, transparent 65%);
+    transform: translateX(-120%);
+    transition: transform 0.8s var(--nubo-ease);
+}
+
+.btn-nubo:hover::after {
+    transform: translateX(120%);
+}
+
+.btn-nubo:hover,
+.btn-nubo:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: var(--nubo-shadow-md);
+}
+
+.btn-nubo-dark {
+    background: var(--nubo-surface-dark);
+    color: #fff;
+}
+
+.btn-nubo-dark:hover,
+.btn-nubo-dark:focus-visible {
+    background: #16181d;
+    color: #fff;
+}
+
+.btn-nubo-light {
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--nubo-text);
+    border-color: var(--nubo-border);
+    backdrop-filter: blur(14px);
+}
+
+.btn-nubo-light:hover,
+.btn-nubo-light:focus-visible {
+    background: #fff;
+    color: var(--nubo-text);
+}
+
+.btn-nubo-lg {
+    min-height: 58px;
+    min-width: 196px;
+}
+
+.btn-nubo-block {
+    width: 100%;
+}
+
+.btn-label,
+.btn-loading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.btn-loading {
+    display: none;
+}
+
+.is-loading {
+    pointer-events: none;
+}
+
+.is-loading .btn-label {
+    display: none;
+}
+
+.is-loading .btn-loading {
+    display: inline-flex;
+}
+
+.btn-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    border: 1px solid var(--nubo-border);
+    background: rgba(255, 255, 255, 0.66);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s var(--nubo-ease), background-color 0.25s var(--nubo-ease), border-color 0.25s var(--nubo-ease);
+}
+
+.btn-icon:hover,
+.btn-icon:focus-visible {
+    transform: translateY(-2px);
+    background: #fff;
+    border-color: var(--nubo-border-strong);
+}
+
+.form-control-nubo {
+    min-height: 56px;
+    border-radius: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: rgba(255, 255, 255, 0.75);
+    padding: 0.95rem 1rem;
+    transition: border-color 0.24s var(--nubo-ease), box-shadow 0.24s var(--nubo-ease), transform 0.24s var(--nubo-ease);
+}
+
+.form-control-nubo:focus {
+    border-color: rgba(15, 23, 42, 0.32);
+    box-shadow: 0 0 0 0.25rem rgba(15, 23, 42, 0.06);
+    transform: translateY(-1px);
+}
+
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    border-bottom: 1px solid var(--nubo-border);
+    background: rgba(245, 245, 243, 0.84);
+    backdrop-filter: blur(18px);
+}
+
+.app-header .navbar {
+    min-height: 72px;
+}
+
+.app-footer {
+    border-top: 1px solid var(--nubo-border);
+    padding: 1.5rem 0 2rem;
+    background: rgba(255, 255, 255, 0.34);
+}
+
+.app-footer .container,
+.app-header .container {
+    max-width: 1180px;
+}
+
+.nav-link-soft {
+    color: var(--nubo-text-soft);
+    font-weight: 500;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-link-soft:hover,
+.nav-link-soft:focus-visible {
+    color: var(--nubo-text);
+    transform: translateY(-1px);
+}
+
+.nubo-toast {
+    background: rgba(16, 17, 19, 0.96);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    box-shadow: var(--nubo-shadow-lg);
+}
+
+.nubo-toast .toast-body {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1rem 1.1rem;
+}
+
+.nubo-toast .bi-check2-circle {
+    color: #8ef0b6;
+}
+
+.nubo-modal {
+    border-radius: 24px;
+    border: 1px solid var(--nubo-border);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: var(--nubo-shadow-lg);
+    overflow: hidden;
+}
+
+.nubo-modal .modal-header,
+.nubo-modal .modal-footer {
+    padding: 1.3rem 1.4rem;
+    border-color: var(--nubo-border);
+}
+
+.nubo-modal .modal-body {
+    padding: 0 1.4rem 1.4rem;
+}
+
+.modal-title {
+    font-size: 1.45rem;
+}
+
+.modal-subtitle {
+    margin-top: 0.25rem;
+    color: var(--nubo-text-soft);
+}
+
+@media (max-width: 767.98px) {
+    .brand-logo {
+        width: 112px;
+    }
+}

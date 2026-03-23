@@ -1,0 +1,231 @@
+.page-home {
+    padding: 1rem;
+}
+
+.workspace-layout {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.workspace-sidebar {
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+    display: grid;
+    gap: 1.15rem;
+    padding: 1.1rem;
+    border-radius: var(--radius-xl);
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid var(--mono-200);
+    box-shadow: var(--shadow-soft);
+}
+
+.sidebar-section {
+    display: grid;
+    gap: 0.38rem;
+}
+
+.sidebar-heading {
+    margin: 0 0 0.2rem;
+    color: var(--mono-500);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.sidebar-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.58rem;
+    border-radius: var(--radius-sm);
+    color: var(--mono-700);
+    font-size: 0.89rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-link i {
+    font-size: 0.92rem;
+}
+
+.sidebar-link:hover,
+.sidebar-link:focus-visible {
+    background: var(--mono-100);
+    color: var(--mono-900);
+    transform: translateX(2px);
+}
+
+.sidebar-link.is-active {
+    background: var(--mono-150);
+    color: var(--mono-900);
+}
+
+.sidebar-note {
+    border-top: 1px solid var(--mono-200);
+    padding-top: 0.85rem;
+    color: var(--mono-600);
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+.workspace-main {
+    min-width: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.workspace-topbar {
+    position: sticky;
+    top: 1rem;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 0.95rem 1.1rem;
+    background: rgba(255, 255, 255, 0.88);
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.workspace-content {
+    display: grid;
+    gap: 1rem;
+}
+
+.hero-panel {
+    display: grid;
+    gap: 0.95rem;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.48rem;
+}
+
+.workspace-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.panel {
+    display: grid;
+    gap: 0.95rem;
+}
+
+.panel-title {
+    margin: 0;
+    font-family: 'Space Grotesk', 'Manrope', sans-serif;
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+}
+
+.progress-list {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.progress-item {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--mono-600);
+    font-weight: 600;
+}
+
+.timeline-list {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.timeline-list li {
+    border: 1px solid var(--mono-200);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.65);
+    padding: 0.7rem 0.75rem;
+    color: var(--mono-700);
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+.timeline-day {
+    display: inline-block;
+    min-width: 42px;
+    margin-right: 0.4rem;
+    color: var(--mono-900);
+    font-weight: 700;
+}
+
+@media (max-width: 1199.98px) {
+    .workspace-layout {
+        grid-template-columns: 240px minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .page-home {
+        padding: 0.7rem;
+    }
+
+    .workspace-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .workspace-sidebar {
+        position: static;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+    }
+
+    .workspace-topbar {
+        position: static;
+    }
+
+    .workspace-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .workspace-sidebar {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .workspace-topbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topbar-actions {
+        width: 100%;
+    }
+
+    .topbar-actions .btn {
+        flex: 1;
+    }
+}

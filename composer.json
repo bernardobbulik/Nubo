@@ -1,0 +1,15 @@
+{
+    "name": "bernardobulik/nubo",
+    "autoload": {
+        "psr-4": {
+            "app": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bernardo Bulik",
+            "email": "bernardobulik@gmail.com"
+        }
+    ],
+    "require": {}
+}

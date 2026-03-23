@@ -1,0 +1,311 @@
+.hero-section {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    padding: 4rem 0 2rem;
+}
+
+.hero-container {
+    max-width: 980px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 50px;
+    padding: 0 1.1rem;
+    border: 1px solid var(--nubo-border);
+    border-radius: 999px;
+    margin: 0 auto 1.75rem;
+    background: rgba(255, 255, 255, 0.66);
+    color: var(--nubo-text-soft);
+    backdrop-filter: blur(14px);
+}
+
+.hero-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--nubo-text);
+}
+
+.hero-copy {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 9vw, 6rem);
+    line-height: 0.95;
+}
+
+.hero-title span {
+    color: #6b7280;
+}
+
+.hero-description {
+    max-width: 640px;
+    margin: 1.75rem auto 0;
+    font-size: clamp(1.1rem, 2.1vw, 1.4rem);
+    line-height: 1.6;
+    color: var(--nubo-text-soft);
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.25rem;
+    flex-wrap: wrap;
+}
+
+.preview-section .container,
+.features-section .container,
+.cta-section .container {
+    max-width: 1180px;
+}
+
+.product-window {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--nubo-border);
+    border-radius: 32px;
+    box-shadow: var(--nubo-shadow-md);
+    padding: 1.2rem;
+}
+
+.product-window-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid var(--nubo-border);
+    border-radius: 24px 24px 16px 16px;
+    padding: 0.7rem 1rem;
+}
+
+.window-dots {
+    display: flex;
+    gap: 0.45rem;
+}
+
+.window-dots span,
+.window-search,
+.product-sidebar-badge,
+.preview-chart-bars span {
+    background: #e7e7e7;
+}
+
+.window-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+}
+
+.window-search {
+    width: 190px;
+    height: 28px;
+    border-radius: 10px;
+}
+
+.product-window-body {
+    padding: 1.8rem 0.3rem 0.5rem;
+}
+
+.product-sidebar {
+    padding: 1rem;
+}
+
+.product-sidebar-badge {
+    width: 78px;
+    height: 28px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-nav-item {
+    width: 100%;
+    min-height: 54px;
+    border-radius: 14px;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    padding: 0 1rem;
+    color: var(--nubo-text-soft);
+    font-weight: 600;
+    transition: transform 0.28s var(--nubo-ease), color 0.28s var(--nubo-ease), background-color 0.28s var(--nubo-ease);
+}
+
+.product-nav-item:hover,
+.product-nav-item.active {
+    transform: translateX(4px);
+    color: #fff;
+    background: var(--nubo-surface-dark);
+}
+
+.preview-top-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.preview-stat-card,
+.preview-chart-card,
+.feature-card,
+.cta-panel {
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid var(--nubo-border);
+    box-shadow: var(--nubo-shadow-sm);
+}
+
+.preview-stat-card {
+    padding: 1rem 1.2rem;
+    border-radius: 20px;
+}
+
+.preview-stat-card span {
+    color: var(--nubo-text-soft);
+    font-size: 0.98rem;
+}
+
+.preview-stat-card strong {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: clamp(1.8rem, 2vw, 2.3rem);
+    letter-spacing: -0.05em;
+}
+
+.preview-chart-card {
+    margin-top: 1rem;
+    border-radius: 22px;
+    padding: 1.4rem 1.3rem;
+    min-height: 290px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.preview-chart-bars {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: end;
+    gap: 0.6rem;
+}
+
+.preview-chart-bars span {
+    border-radius: 8px 8px 0 0;
+    animation: chartGrow 4.6s var(--nubo-ease) infinite alternate;
+}
+
+.preview-chart-bars span:nth-child(1) { height: 56px; }
+.preview-chart-bars span:nth-child(2) { height: 92px; }
+.preview-chart-bars span:nth-child(3) { height: 64px; }
+.preview-chart-bars span:nth-child(4) { height: 114px; }
+.preview-chart-bars span:nth-child(5) { height: 78px; }
+.preview-chart-bars span:nth-child(6) { height: 98px; }
+.preview-chart-bars span:nth-child(7) { height: 126px; }
+.preview-chart-bars span:nth-child(8) { height: 84px; }
+.preview-chart-bars span:nth-child(9) { height: 104px; }
+.preview-chart-bars span:nth-child(10) { height: 118px; }
+.preview-chart-bars span:nth-child(11) { height: 68px; }
+.preview-chart-bars span:nth-child(12) { height: 134px; }
+
+@keyframes chartGrow {
+    0% { transform: scaleY(0.92); opacity: 0.75; }
+    100% { transform: scaleY(1); opacity: 1; }
+}
+
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto 3rem;
+}
+
+.section-heading h2,
+.cta-panel h2 {
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    line-height: 1;
+}
+
+.section-heading p,
+.cta-panel p {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--nubo-text-soft);
+}
+
+.feature-card {
+    border-radius: 24px;
+    padding: 1.6rem;
+    height: 100%;
+    transition: transform 0.32s var(--nubo-ease), box-shadow 0.32s var(--nubo-ease), border-color 0.32s var(--nubo-ease);
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--nubo-border-strong);
+    box-shadow: var(--nubo-shadow-md);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--nubo-surface-soft);
+    font-size: 1.25rem;
+    margin-bottom: 1.2rem;
+}
+
+.feature-card h3 {
+    font-size: 1.65rem;
+    margin-bottom: 0.85rem;
+}
+
+.feature-card p {
+    color: var(--nubo-text-soft);
+    line-height: 1.75;
+    font-size: 1.05rem;
+}
+
+.cta-panel {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 28px;
+}
+
+.cta-panel .btn {
+    margin-top: 1.8rem;
+}
+
+@media (max-width: 991.98px) {
+    .preview-top-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-chart-card {
+        min-height: 240px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding-top: 3rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .cta-panel {
+        padding: 3rem 1.25rem;
+    }
+}
