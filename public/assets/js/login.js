@@ -13,19 +13,9 @@
     }
 
     if (loginForm && loginButton) {
-        loginForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            window.NuboUI.setButtonLoading(loginButton, true);
-
-            setTimeout(() => {
-                window.NuboUI.setButtonLoading(loginButton, false);
-                window.NuboUI.showToast('loginToast');
-            }, 1200);
-        });
-
-        loginForm.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                loginButton.click();
+        loginForm.addEventListener('submit', () => {
+            if (window.NuboUI && typeof window.NuboUI.setButtonLoading === 'function') {
+                window.NuboUI.setButtonLoading(loginButton, true);
             }
         });
     }

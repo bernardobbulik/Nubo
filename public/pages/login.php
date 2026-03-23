@@ -30,10 +30,10 @@ $bootstrapVars = [
                     <p>to your workspace</p>
                 </header>
 
-                <form id="loginForm" class="login-form" action="<?php echo $escape($routeUrl('home')); ?>" method="post">
+                <form id="loginForm" class="login-form" action="<?php echo $escape($basePath . '/app/apis/verificaLogin.php'); ?>" method="POST">
                     <div class="mb-4">
                         <label for="loginEmail" class="form-label">Email</label>
-                        <input type="email" id="loginEmail" class="form-control form-control-nubo" placeholder="you@example.com" required>
+                        <input type="email" id="loginEmail" name="email" class="form-control form-control-nubo" placeholder="you@example.com" required>
                     </div>
 
                     <div class="mb-4">
@@ -42,7 +42,7 @@ $bootstrapVars = [
                             <a href="#" class="login-link">Forgot password?</a>
                         </div>
                         <div class="password-field">
-                            <input type="password" id="loginPassword" class="form-control form-control-nubo" placeholder="••••••••" required>
+                            <input type="password" id="loginPassword" name="senha" class="form-control form-control-nubo" placeholder="••••••••" required>
                             <button class="btn btn-icon password-toggle" type="button" id="togglePassword" aria-label="Alternar visibilidade da senha">
                                 <i class="bi bi-eye"></i>
                             </button>

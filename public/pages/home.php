@@ -30,12 +30,23 @@ $bootstrapVars = [
                 </button>
 
                 <div class="topbar-actions ms-auto">
-                    <a class="btn btn-outline-brand" href="<?php echo $escape($routeUrl('login')); ?>">Sign out</a>
+                    <div class="dropdown">
+                        <button class="btn topbar-profile-toggle dropdown-toggle" type="button" id="topbarProfileMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="topbar-profile-avatar">NB</span>
+                            <span class="topbar-profile-text">Profile</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end topbar-profile-menu" aria-labelledby="topbarProfileMenu">
+                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="<?php echo $escape($routeUrl('login')); ?>">Sign out</a></li>
+                        </ul>
+                    </div>
                 </div>
             </header>
 
             <main class="dashboard-content container-fluid">
-                <section class="dashboard-hero reveal-up">
+                <section id="dashboard-overview" class="dashboard-hero reveal-up">
                     <div>
                         <h1>Dashboard</h1>
                         <p>Welcome back. Here's your team overview.</p>
@@ -50,7 +61,7 @@ $bootstrapVars = [
                     </button>
                 </section>
 
-                <section class="stats-grid row g-4">
+                <section id="products" class="stats-grid row g-4">
                     <div class="col-sm-6 col-xl-3">
                         <article class="metric-card reveal-up delay-1">
                             <div class="metric-card-icon"><i class="bi bi-people"></i></div>
@@ -85,8 +96,8 @@ $bootstrapVars = [
                     </div>
                 </section>
 
-                <section class="dashboard-panels row g-4">
-                    <div class="col-xl-8">
+                <section class="dashboard-panels row g-4 mt-2">
+                    <div id="customers" class="col-xl-8">
                         <article class="panel-card reveal-up delay-2">
                             <div class="panel-card-header">
                                 <h2>Team Members</h2>
@@ -158,7 +169,7 @@ $bootstrapVars = [
                         </article>
                     </div>
 
-                    <div class="col-xl-4">
+                    <div id="orders" class="col-xl-4">
                         <article class="panel-card reveal-up delay-3">
                             <div class="panel-card-header">
                                 <h2>Recent Activity</h2>

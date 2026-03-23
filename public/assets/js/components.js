@@ -24,24 +24,88 @@
         </a>
     `;
 
-    const sidebarMarkup = `
-        <div class="dashboard-sidebar">
-            <div class="dashboard-sidebar-brand">${brandMarkup}</div>
-            <div class="sidebar-section-title">Workspace</div>
-            <nav class="sidebar-nav">
-                <a href="${routeUrl('home')}" class="sidebar-link ${currentPage.includes('home') || currentPage.includes('dashboard') ? 'active' : ''}"><i class="bi bi-grid"></i> Dashboard</a>
-                <a href="#" class="sidebar-link"><i class="bi bi-people"></i> Team</a>
-                <a href="#" class="sidebar-link"><i class="bi bi-kanban"></i> Projects</a>
-                <a href="#" class="sidebar-link"><i class="bi bi-receipt"></i> Invoices</a>
-                <a href="#" class="sidebar-link"><i class="bi bi-clock"></i> Time Tracking</a>
-            </nav>
-            <div class="sidebar-spacer"></div>
-            <div class="sidebar-footer">
-                <a href="#" class="sidebar-footer-link"><i class="bi bi-bell"></i> Notifications</a>
-                <a href="#" class="sidebar-footer-link"><i class="bi bi-gear"></i> Settings</a>
+    const currentHash = window.location.hash.toLowerCase();
+    const isDashboardPage = currentPage.includes('home') || currentPage.includes('dashboard');
+
+    const navItems = [
+        {
+            label: 'Home',
+            icon: 'bi-house-door',
+            href: routeUrl('home'),
+            active: currentPage.includes('home'),
+        },
+        {
+            label: 'Projects',
+            icon: 'bi-table',
+            href: `${routeUrl('projects')}`,
+            active: isDashboardPage,
+        },
+        {
+            label: 'Products',
+            icon: 'bi-grid',
+            href: `${routeUrl('home')}#products`,
+            active: isDashboardPage && currentHash === '#products',
+        },
+        {
+            label: 'Customers',
+            icon: 'bi-people',
+            href: `${routeUrl('home')}#customers`,
+            active: isDashboardPage && currentHash === '#customers',
+        },
+    ];
+
+    const tooltipAttrs = (label, mobile) => {
+        if (mobile) {
+            return '';
+        }
+
+        return `data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="${label}"`;
+    };
+
+    const buildSidebarMarkup = (mobile = false) => {
+        const dropdownId = mobile ? 'sidebarUserMobile' : 'sidebarUserDesktop';
+        const sidebarClass = mobile
+            ? 'dashboard-sidebar dashboard-sidebar-icon dashboard-sidebar-icon--mobile d-flex flex-column flex-shrink-0 bg-light'
+            : 'dashboard-sidebar dashboard-sidebar-icon d-flex flex-column flex-shrink-0 bg-light';
+
+        const itemMarkup = navItems.map((item) => {
+            const currentAttribute = item.active ? 'aria-current="page"' : '';
+
+            return `
+                <li class="nav-item">
+                    <a href="${item.href}" class="nav-link py-3 border-bottom ${item.active ? 'active' : ''}" ${currentAttribute} ${tooltipAttrs(item.label, mobile)}>
+                        <i class="bi ${item.icon}" role="img" aria-label="${item.label}"></i>
+                        <span class="sidebar-item-label">${item.label}</span>
+                    </a>
+                </li>
+            `;
+        }).join('');
+
+        return `
+            <div class="${sidebarClass}">
+                <a href="${routeUrl('landing')}" class="d-block p-3 link-dark text-decoration-none dashboard-sidebar-brand" ${tooltipAttrs('Nubo', mobile)}>
+                    <img src="${assetBase}/icons/nubo-icon.svg" alt="Nubo" class="dashboard-sidebar-brand-icon">
+                    <span class="sidebar-item-label">Nubo</span>
+                </a>
+                <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+                    ${itemMarkup}
+                </ul>
+                <div class="dropdown border-top sidebar-profile-dropdown">
+                    <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle sidebar-profile-toggle" id="${dropdownId}" data-bs-toggle="dropdown" aria-expanded="false" ${tooltipAttrs('Profile', mobile)}>
+                        <span class="sidebar-avatar">NB</span>
+                        <span class="sidebar-item-label">Profile</span>
+                    </a>
+                    <ul class="dropdown-menu text-small shadow sidebar-dropdown-menu" aria-labelledby="${dropdownId}">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="${routeUrl('login')}">Sign out</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    `;
+        `;
+    };
 
     if (headerContainer) {
         headerContainer.innerHTML = `
@@ -76,10 +140,16 @@
     }
 
     if (sidebarContainer) {
-        sidebarContainer.innerHTML = sidebarMarkup;
+        sidebarContainer.innerHTML = buildSidebarMarkup(false);
     }
 
     if (mobileSidebarBody) {
-        mobileSidebarBody.innerHTML = sidebarMarkup;
+        mobileSidebarBody.innerHTML = buildSidebarMarkup(true);
+    }
+
+    if (typeof bootstrap !== 'undefined') {
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((element) => {
+            bootstrap.Tooltip.getOrCreateInstance(element);
+        });
     }
 })();

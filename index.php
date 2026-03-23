@@ -27,6 +27,7 @@ $aliases = [
     'public/pages/login.php' => 'login',
     'public/pages/home.php' => 'home',
     'public/pages/dashboard.php' => 'dashboard',
+    'app/apis/verificaLogin.php' => 'verificaLogin',
 ];
 
 $requestUri = (string) ($_SERVER['REQUEST_URI'] ?? '/');
